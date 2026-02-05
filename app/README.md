@@ -135,12 +135,51 @@ The built files will be in the `dist/` directory, ready for deployment to any st
 
 ### Environment Variables
 
-Create a `.env` file for any environment-specific configurations:
+Create a `.env` file in the root directory and add your EmailJS configuration:
+
+```bash
+cp .env.example .env
+```
+
+Then update the `.env` file with your EmailJS credentials:
 
 ```env
-VITE_APP_TITLE="Your Portfolio"
-VITE_APP_DESCRIPTION="Your professional portfolio website"
+VITE_EMAILJS_SERVICE_ID=your_service_id_here
+VITE_EMAILJS_TEMPLATE_ID=your_template_id_here
+VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
 ```
+
+### EmailJS Setup
+
+The contact form uses EmailJS to send emails without a backend server. To set it up:
+
+1. **Create an EmailJS account** at [https://www.emailjs.com/](https://www.emailjs.com/)
+
+2. **Create an email service**:
+   - Go to Email Services in your dashboard
+   - Add a new service (Gmail, Outlook, etc.)
+   - Connect your email account
+
+3. **Create an email template**:
+   - Go to Email Templates
+   - Create a new template with these variables:
+     ```
+     Subject: New Contact Form Message from {{from_name}}
+
+     From: {{from_name}} ({{from_email}})
+
+     Message:
+     {{message}}
+     ```
+
+4. **Get your credentials**:
+   - Service ID: Found in Email Services
+   - Template ID: Found in Email Templates
+   - Public Key: Found in Account → General
+
+5. **Update your `.env` file** with these values
+
+The contact form will now send real emails to your inbox!
 
 ## 🤝 Contributing
 

@@ -126,12 +126,26 @@ The particle background animation can be customized in `src/App.tsx`:
 npm run build
 ```
 
-The built files will be in the `dist/` directory, ready for deployment to any static hosting service like:
+The built files will be in the `dist/` directory, ready for deployment to any static hosting service.
 
-- **Vercel** - `vercel --prod`
-- **Netlify** - Drag and drop the `dist` folder
-- **GitHub Pages** - Use GitHub Actions for automated deployment
-- **AWS S3 + CloudFront** - For scalable hosting
+### Deploy to Vercel
+
+1. **Install Vercel CLI** (optional):
+   ```bash
+   npm i -g vercel
+   ```
+
+2. **Deploy**:
+   ```bash
+   vercel --prod
+   ```
+   Or drag and drop the `dist` folder to [vercel.com](https://vercel.com)
+
+3. **Environment Variables**: Set your EmailJS variables in Vercel dashboard:
+   - Go to your project settings
+   - Add environment variables: `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`
+
+The `vercel.json` file handles SPA routing automatically.
 
 ### Environment Variables
 

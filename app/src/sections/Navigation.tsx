@@ -71,8 +71,8 @@ const Navigation = () => {
             {/* CTA Button */}
             <div className="hidden md:block">
               <a
-                href="/Resume_RamChandraCA.pdf"
-                download
+                href="/resume.pdf"
+                download="RamChandra_Resume.pdf"
                 className="btn-primary flex items-center gap-2 text-sm"
               >
                 <Download className="w-4 h-4" />
@@ -118,8 +118,8 @@ const Navigation = () => {
                 </button>
               ))}
               <a
-                href="/Resume_RamChandraCA.pdf"
-                download
+                href="/resume.pdf"
+                download="RamChandra_Resume.pdf"
                 className="btn-primary flex items-center justify-center gap-2 mt-4"
               >
                 <Download className="w-4 h-4" />

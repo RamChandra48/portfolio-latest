@@ -130,22 +130,38 @@ The built files will be in the `dist/` directory, ready for deployment to any st
 
 ### Deploy to Vercel
 
-1. **Install Vercel CLI** (optional):
-   ```bash
-   npm i -g vercel
+**Important**: The `vercel.json` file must be at the **repository root** (not in the `app/` folder).
+
+1. **Ensure vercel.json is at root**:
+   ```
+   portfolio-latest/
+   ├── vercel.json     ← Must be here!
+   └── app/
+       ├── package.json
+       ├── dist/
+       └── ...
    ```
 
 2. **Deploy**:
-   ```bash
-   vercel --prod
-   ```
-   Or drag and drop the `dist` folder to [vercel.com](https://vercel.com)
+   - Connect your GitHub repository to Vercel
+   - Vercel will automatically detect the configuration
+   - No need to manually set build/output directories
 
-3. **Environment Variables**: Set your EmailJS variables in Vercel dashboard:
-   - Go to your project settings
-   - Add environment variables: `VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_PUBLIC_KEY`
+3. **Set Environment Variables** in Vercel dashboard:
+   - Go to your project → Settings → Environment Variables
+   - Add these variables:
+     ```
+     VITE_EMAILJS_SERVICE_ID=your_service_id
+     VITE_EMAILJS_TEMPLATE_ID=your_template_id
+     VITE_EMAILJS_PUBLIC_KEY=your_public_key
+     ```
 
-The `vercel.json` file handles SPA routing automatically.
+4. **Redeploy**: After adding environment variables, trigger a new deployment
+
+The `vercel.json` configuration handles:
+- Building the project: `cd app && npm install && npm run build`
+- Output directory: `app/dist`
+- SPA routing: All routes redirect to `index.html`
 
 ### Environment Variables
 

@@ -3,7 +3,7 @@
   "outputDirectory": "app/dist",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/:path((?!.*\\.).*)",
       "destination": "/index.html"
     }
   ],
@@ -14,6 +14,10 @@
         {
           "key": "Content-Type",
           "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=RamChandra_Resume.pdf"
         }
       ]
     }

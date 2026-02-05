@@ -30,6 +30,16 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleResumeDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.setAttribute('download', 'RamChandra_Resume.pdf');
+    link.setAttribute('target', '_blank');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <nav
@@ -70,14 +80,13 @@ const Navigation = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <a
-                href="/resume.pdf"
-                download="RamChandra_Resume.pdf"
-                className="btn-primary flex items-center gap-2 text-sm"
+              <button
+                onClick={handleResumeDownload}
+                className="btn-primary flex items-center gap-2 text-sm cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 Resume
-              </a>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -117,14 +126,13 @@ const Navigation = () => {
                   {link.name}
                 </button>
               ))}
-              <a
-                href="/resume.pdf"
-                download="RamChandra_Resume.pdf"
+              <button
+                onClick={handleResumeDownload}
                 className="btn-primary flex items-center justify-center gap-2 mt-4"
               >
                 <Download className="w-4 h-4" />
                 Download Resume
-              </a>
+              </button>
             </div>
           </div>
         </div>

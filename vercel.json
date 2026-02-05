@@ -1,35 +1,4 @@
 {
   "buildCommand": "cd app && npm install && npm run build",
-  "outputDirectory": "app/dist",
-  "trailingSlash": false,
-  "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/resume.pdf",
-      "destination": "/resume.pdf"
-    },
-    {
-      "source": "/assets/(.*)",
-      "destination": "/assets/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/resume.pdf",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/pdf"
-        },
-        {
-          "key": "Content-Disposition",
-          "value": "attachment; filename=RamChandra_Resume.pdf"
-        }
-      ]
-    }
-  ]
+  "outputDirectory": "app/dist"
 }

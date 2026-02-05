@@ -1,53 +1,166 @@
-# React + TypeScript + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features an animated particle background, smooth scrolling navigation, and comprehensive sections showcasing skills, projects, and experience.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern Tech Stack**: React 19, TypeScript, Vite, Tailwind CSS
+- **Responsive Design**: Mobile-first approach with adaptive layouts
+- **Animated Background**: Interactive particle system with smooth animations
+- **Accessibility**: Built with Radix UI components for screen reader support
+- **Dark/Light Theme**: Theme switching capability with next-themes
+- **Form Validation**: Contact form with React Hook Form and Zod validation
+- **Charts & Visualizations**: Skills and experience data visualization with Recharts
+- **Smooth Scrolling**: Seamless navigation between sections
+- **Performance Optimized**: Fast loading with Vite's build system
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend Framework
+- **React 19** - Latest React with concurrent features
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool and dev server
 
-## Expanding the ESLint configuration
+### Styling & UI
+- **Tailwind CSS** - Utility-first CSS framework
+- **Radix UI** - Accessible, unstyled UI components
+- **Lucide React** - Beautiful icon library
+- **Tailwind Animate** - CSS animation utilities
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Forms & Validation
+- **React Hook Form** - Performant forms with easy validation
+- **Zod** - TypeScript-first schema validation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Charts & Data
+- **Recharts** - Composable charting library
+- **Date-fns** - Modern JavaScript date utility library
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Development Tools
+- **ESLint** - Code linting and formatting
+- **PostCSS** - CSS processing
+- **Autoprefixer** - CSS vendor prefixing
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   └── ui/          # Reusable UI components (Radix UI based)
+├── sections/        # Main portfolio sections
+│   ├── Hero.tsx     # Landing section with intro
+│   ├── About.tsx    # Personal information
+│   ├── Skills.tsx   # Technical skills with charts
+│   ├── Experience.tsx # Work experience timeline
+│   ├── Projects.tsx # Portfolio projects showcase
+│   ├── Contact.tsx  # Contact form and information
+│   ├── Footer.tsx   # Site footer
+│   └── Navigation.tsx # Main navigation menu
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions
+└── App.tsx          # Main application component
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
+### Prerequisites
+
+- Node.js (version 20.19+ or 22.12+ recommended)
+- npm or yarn package manager
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd portfolio-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173`
+
+## 📜 Available Scripts
+
+- `npm run dev` - Start the development server
+- `npm run build` - Build the project for production
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint for code quality checks
+
+## 🎨 Customization
+
+### Personal Information
+Edit the following files to customize with your information:
+
+- `src/sections/Hero.tsx` - Update name, title, and hero content
+- `src/sections/About.tsx` - Add your personal story and background
+- `src/sections/Skills.tsx` - Modify skills data and proficiency levels
+- `src/sections/Experience.tsx` - Update work experience and timeline
+- `src/sections/Projects.tsx` - Add your projects with descriptions and links
+- `src/sections/Contact.tsx` - Update contact information and social links
+
+### Styling
+- Colors and themes can be customized in `tailwind.config.js`
+- Component styles are in individual component files
+- Global styles are in `src/index.css`
+
+### Animation Settings
+The particle background animation can be customized in `src/App.tsx`:
+- Particle count and speed
+- Animation colors and effects
+- Canvas rendering settings
+
+## 🌐 Deployment
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory, ready for deployment to any static hosting service like:
+
+- **Vercel** - `vercel --prod`
+- **Netlify** - Drag and drop the `dist` folder
+- **GitHub Pages** - Use GitHub Actions for automated deployment
+- **AWS S3 + CloudFront** - For scalable hosting
+
+### Environment Variables
+
+Create a `.env` file for any environment-specific configurations:
+
+```env
+VITE_APP_TITLE="Your Portfolio"
+VITE_APP_DESCRIPTION="Your professional portfolio website"
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+
+## 🙏 Acknowledgments
+
+- [Radix UI](https://www.radix-ui.com/) for accessible UI components
+- [Tailwind CSS](https://tailwindcss.com/) for the styling system
+- [Vite](https://vitejs.dev/) for the build tooling
+- [React](https://reactjs.org/) for the framework
+
+---
+
+Built with ❤️ using React and TypeScript
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([
